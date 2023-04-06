@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'info.css' %}" />
+</head>
+<body>
+    <div class="menu" >
+        <nav class="clearfix">
+          <ul class="clearfix">
+            <li><a href="{% url 'info' %}">INFO.</a></li>
+            <li><a href="{% url 'project' %}">PROJECT.</a></li>
+            <li><a href="{% url 'blog' %}">BLOG.</a></li>
+        </ul>
+        <a id="pull" href="#"></a>
+      </nav>
+      </div>
+    <div class="podium">
+        <p class="podium-txt">Stage ;</p>
+        <img class="podium-img" src="{% static '/image/background.jpeg' %}">
+    </div>
+    <div class="ment" style="line-height:110%;"> 
+        <p class="ment-txt">가나다 라 마바 사아</p><br> 
+        <p class="ment-txt">자카 타파하 가나다 라마바사 아자</p><br>
+        <p class="ment-txt">가나다 라 마바 사아.</p><br>
+    </div>
+    <div class="ment2" style="line-height:60%;">
+        <p class="ment-txt2">가나다 라 마바 사아자카 타파하 가나다 라마바사 아자.</p><br>
+        <p class="ment-txt2">가나다 라 마바 사아자카 타파하 가나다 라마바사 아자라마바사 아자.</p><br>
+    </div>
+    <div class="comp" style="line-height:60%;">
+        <p class="comp-txt1">COMPETITIVENESS</p><br>
+        <p class="comp-txt2">가나다 라 마바 사아자카 타파하 가나다 라마바사 아자.</p>
+    </div>
+    <div class="comp-img">
+        <img class="comp-img-1" src="{% static '/image/plan.jpeg' %}">
+        <img class="comp-img-1" src="{% static '/image/market.jpeg' %}">
+        <img class="comp-img-1" src="{% static '/image/design.jpeg' %}">
+    </div>
+
+    <h1>CONTACT</h1><hr>
+    <p class="contact">
+        ph. 010 6298 5088<br>
+        email. younglegscrew@naver.com
+    </p>
+
+</body>
+
+</html>

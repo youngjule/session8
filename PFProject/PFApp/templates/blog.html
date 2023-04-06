@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog.css' %}" />
+</head>
+<body>
+    <div class="menu" >
+        <nav class="clearfix">
+          <ul class="clearfix">
+            <li><a href="{% url 'info' %}">INFO.</a></li>
+            <li><a href="{% url 'project' %}">PROJECT.</a></li>
+            <li><a href="{% url 'blog' %}">BLOG.</a></li>
+        </ul>
+        <a id="pull" href="#"></a>
+      </nav>
+      </div>
+      {% for category in categories %}
+    <div class="category">
+    <ul>
+          <li><a href="{% url 'category' category.id %}">{{ category.name }} ({{ category.num_posts }})</a></li>
+        </ul>
+    </div>
+    {% endfor %}
+    {%  for article in articles %}
+    <div class="article">
+        <ul>
+        
+        <li><a href = "{% url 'detail' article.id %}">{{ article.title }}</a></li>
+       
+    </ul>
+  </div>
+  {% endfor %}
+    <a href="{% url 'new' %}">글 쓰러 가기</a>
+</body>
+</html>
+

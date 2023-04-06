@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'project.css' %}" />
+</head>
+<body>
+    <div class="menu" >
+        <nav class="clearfix">
+          <ul class="clearfix">
+            <li><a href="{% url 'info' %}">INFO.</a></li>
+            <li><a href="{% url 'project' %}">PROJECT.</a></li>
+            <li><a href="{% url 'blog' %}">BLOG.</a></li>
+        </ul>
+        <a id="pull" href="#"></a>
+      </nav>
+      </div>
+
+</body>
+
+</html>
