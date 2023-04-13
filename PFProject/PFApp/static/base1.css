@@ -1,0 +1,63 @@
+
+.menu {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  font-family: helvetica;
+  font-weight: 900;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: white;
+  padding-top: 30px;  
+  padding-bottom: 30px;  
+
+}
+
+a:link {
+  color : black;
+}
+a:visited {
+  color : black;
+}
+a:hover {
+  color : black;
+}
+a:active {
+  color : black;
+}
+
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  a {
+    text-decoration-line: none;
+  }
+
+  h1 {
+    font-family: helvetica;
+    font-weight: 100;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    margin-top: 200px;
+  }
+  
+  .contact {
+    font-family: helvetica;
+    font-weight: 100;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
+  .menu2 {
+    margin-left: 30px;
+    margin-right: 30px;
+
+  }

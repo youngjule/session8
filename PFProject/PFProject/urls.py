@@ -24,8 +24,16 @@ urlpatterns = [
     path('project', views.project, name='project'),
     path('blog', views.blog, name='blog'),
     path('new/', views.new, name='new'),
-    path('detail/<int:article_id>', views.detail, name='detail'),
-    path('category/<int:category_id>/', views.category, name='category'),
+    path('detail/<int:article_id>/', views.detail, name='detail'),
+    path('create_comment/<int:article_id>', views.create_comment, name='create_comment'),
+    path('create_recomment/<int:article_id>/<int:comment_id>', views.create_recomment, name='create_recomment'),
+    path('edit/<int:article_id>', views.edit, name='edit'),
+    path('delete-comment/<int:article_id>/<int:comment_id>', views.delete_comment, name='delete_comment'),    path('category/<int:category_id>/', views.category, name='category'),
+    path("todohome", views.todohome, name="todohome"),
+    path("todocreate/", views.todocreate, name="todocreate"),
+    path("tododetail/<int:tododetail_pk>/", views.tododetail, name="tododetail"),
+    path("todoupdate/<int:tododetail_pk>/", views.todoupdate, name="todoupdate"),
+    path("tododelete/<int:tododetail_pk>/", views.tododelete, name="tododelete")
 
 ]
 

@@ -1,3 +1,5 @@
+{% extends 'base1.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
+    {% block css %}
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'info.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'info1.css' %}" />
+    {% endblock %}
 </head>
 <body>
-    <div class="menu" >
-        <nav class="clearfix">
-          <ul class="clearfix">
-            <li><a href="{% url 'info' %}">INFO.</a></li>
-            <li><a href="{% url 'project' %}">PROJECT.</a></li>
-            <li><a href="{% url 'blog' %}">BLOG.</a></li>
-        </ul>
-        <a id="pull" href="#"></a>
-      </nav>
-      </div>
+
+    {% block contents %}
     <div class="podium">
         <p class="podium-txt">Stage ;</p>
         <img class="podium-img" src="{% static '/image/background.jpeg' %}">
@@ -41,12 +37,8 @@
         <img class="comp-img-1" src="{% static '/image/market.jpeg' %}">
         <img class="comp-img-1" src="{% static '/image/design.jpeg' %}">
     </div>
+    {% endblock %}
 
-    <h1>CONTACT</h1><hr>
-    <p class="contact">
-        ph. 010 6298 5088<br>
-        email. younglegscrew@naver.com
-    </p>
 
 </body>
 

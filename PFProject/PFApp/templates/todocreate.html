@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'todocreate.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="background flex">
+        <form action="" method="post" class="contentWrapper flex">
+            {% csrf_token %}
+            <input type="text" name="title" class="title" placeholder="제목">
+            <div class="deadlineWrapper flex">
+                <label for="deadline">deadline: </label>
+                <input type="date" name="end_date" class="deadline" id="deadline">
+            </div>
+            <textarea name="content" id="" cols="30" rows="10" placeholder="내용을 입력하세요!"></textarea>
+            <div class="foot flex">
+                <a class="flex" href="{% url 'todohome' %}">cancle</a>
+                <button class="flex" type="submit">submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

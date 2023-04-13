@@ -4,23 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About Me</title>
+    {% extends 'base1.html' %}
+    {% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}" />
+    {% endblock %}
 </head>
 <body>
-    <h2>글 상세 페이지</h2>
-    <div>
-        <h3>제목</h3>
-        <div>{{ article.title }}</div>
+
+    {% block contents %}
+    <img class="detailbg" src="{% static '/image/detailbg.jpeg' %}">
+    <div class="container">
+        <a class="list" href="{% url 'blog' %}"> ←  전체 목록으로 돌아가기</a>
+
+        <div class="title">
+            <p>{{article.title}}</p>
+        </div>
+        <div class="info">
+            <p>{{article.created_date}}</p>
+            <span>category: {{article.category}}</span>
+        </div>
+        <div class="content">
+            <p>{{article.content}}</p>
+        </div>
+        <hr>
     </div>
-        <div><p>작성 시간: {{ created_date }}</p></div>
-    <div>
-        <h3>내용</h3>
-        <div>{{ article.content }}</div>
+
+        <div class="comm">  
+            <h2 class="title">Re ;</h2>
+
+            <form method="post" action="{% url 'create_comment' article.pk %}">
+                {% csrf_token %}
+
+                <!-- 댓글입력창 -->
+                <div class="re">    
+                    <input class="textarea" type="text" name="content" placeholder="댓글을 입력해주세요." />
+                    <button type="submit">저장</button>
+                </div>
+                <img class="arrow" src="{% static '/image/arrow.png' %}">
+            </form>
+
+            
+            <!-- 전체 댓글 -->
+            {% for comment in comments %}                    
+
+            <div id="whole_comments">
+
+                <div class="eachcomm">
+                    <span>{{comment.content}}</span>
+                    <span> <a class="xbutton" href="{% url 'delete_comment' article.pk comment.pk %}">x</a> </span>
+
+                    </div>
+
+                        <div class="recomments_div">
+                            {% for recomment in recomments %}
+                            {% if recomment.parent_comment.pk == comment.pk %}    
+                            <div class="recom_div_1">
+                            <li class="recomments_li">☇ {{recomment.content}}</li>
+                            <a class="xbutton" href="{% url 'delete_comment' article.pk recomment.pk %}"> x</a>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+        
+                        </div>
+
+
+                        <div class="reset">
+                        <form method="post" action="{% url 'create_recomment' article.pk comment.pk %}">
+                            {% csrf_token %}
+                            <input class="retextarea" type="text" name="re_content" placeholder="대댓글을 입력해주세요." />
+                            <button class="rebutton">+</button>
+                        </form>
+                    </div>
+                    
+                    </div>
+                    <hr>
+                {% endfor %}
+        
+            
+    
+        </div>
     </div>
-    <div>
-        <h3>카테고리</h3>
-        <div>{{ category.name }}</div>
-    </div>
-    <a href="{% url 'blog' %}">전체 목록으로 돌아가기</a>
+
+              {% endblock %}
+
 </body>
 </html>
+
+

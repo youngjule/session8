@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background{
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.background h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+}
+.background h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    width: 100%;
+    margin-top: 40px;
+    flex-direction: column;
+}
+.main .addBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: rgb(199, 199, 199);
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+.main .addBtn:hover {
+    background-color: rgb(137, 137, 137);
+}
+.main ul {
+    margin-top: 20px;
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+}
+.main ul li {
+    list-style: none;
+    width: 50%;
+    height: 50px;
+    border-bottom: 1px solid black;
+    margin: 15px 0;
+    justify-content: flex-start;
+}
+.main ul li .deadline {
+    width: 10%;
+    height: 100%;
+}
+.main ul li .title {
+    width: 60%;
+    height: 100%;
+    padding-left: 50px;
+    justify-content: flex-start;
+}
+.main ul li .detail {
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(199, 199, 199);
+    margin-left: 40px;
+}
+.main ul li .detail:hover {
+    background-color: rgb(137, 137, 137);
+}
+.main ul li .delete {
+    padding-left: 20px;
+    color: black;
+}

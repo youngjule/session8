@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'todohome.css' %}">
+    <script src="https://kit.fontawesome.com/2ce808a63c.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="background">
+        <h1><a href="{% url 'todohome' %}">To do List</a></h1>
+        <div class="main flex">
+            <a href="{% url 'todocreate' %}" class="addBtn flex"><p class="fa-solid fa-plus"></i></a>
+            <ul class="flex">
+                {% for Todo in Todos %}
+                <li class="flex">
+                    <span class="deadline flex">D-{{ Todo.deadline }}</span>
+                    <span class="title flex">{{ Todo.title }}</span>
+                    <a class="detail flex" href="{% url 'tododetail' Todo.pk %}">detail</a>
+                    <a class="delete" href="{% url 'tododelete' Todo.pk %}"><i class="fa-solid fa-xmark"></i></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+    padding-left: 200px;
+    padding-right: 200px;
+    background-color: #f9f9fd;;
+
+}
+
+p {
+    font-family: helvetica;
+    margin: 3px;
+
+}
+.title {
+    font-size: 30px;
+    font-family: helvetica;
+    font-weight: 900;
+    margin-top: 10px;
+
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font-size: 15px;
+    font-family: helvetica;
+    margin-bottom: 100px;
+}
+
+
+.content {
+    margin-bottom: 100px;
+}
+
+.list {
+    font-family: helvetica;
+    font-size: 15px;
+}
+
+.banner {
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+    height: 400px;
+}
+
+.textarea {
+    width:1020px;
+    height:100px;
+    font-size:15px;
+    font-family: helvetica;
+  }
+
+  .retextarea {
+    width:995px;
+    height:30px;
+    font-size:15px;
+    font-family: helvetica;
+    margin-top: 10px;
+
+  }
+
+  .rebutton {
+    height: 35px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    right: 12px;
+  }
+
+  .comm {
+    padding-top: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  li {
+    list-style-type: none;
+    font-family: helvetica;
+  }
+
+.re {
+    display: flex;
+
+}
+
+.reset {
+    display: flex;
+}
+
+.eachcomm {
+margin-top: 30px;
+}
+
+.re {
+    display: flex;
+    padding-top: 30px;
+}
+
+.recomments_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.recom_div_1 {
+    display: flex;
+
+}
+
+.arrow {
+    position: relative;
+    left: 35vw;
+    width: 5%;
+    margin-top: 20px;
+}
+
+
+.detailbg {
+    width: 100vw;
+    height: 270px;
+}

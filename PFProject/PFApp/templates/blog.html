@@ -5,37 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% extends 'base1.html' %}
+    {% block css %}
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'blog.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'blog3.css' %}" />
+    {% endblock %}
 </head>
 <body>
-    <div class="menu" >
-        <nav class="clearfix">
-          <ul class="clearfix">
-            <li><a href="{% url 'info' %}">INFO.</a></li>
-            <li><a href="{% url 'project' %}">PROJECT.</a></li>
-            <li><a href="{% url 'blog' %}">BLOG.</a></li>
-        </ul>
-        <a id="pull" href="#"></a>
-      </nav>
-      </div>
-      {% for category in categories %}
+  {% block contents %}
+  <img class="bannerimg" src="{% static '/image/banner.jpeg' %}">
+
+    <div class="container">
+      <h1 class="banner">Blog Contents</h1>
+      <a class="button" href="{% url 'new' %}">글 쓰러 가기</a>
+
     <div class="category">
+      {% for category in categories %}
+
     <ul>
           <li><a href="{% url 'category' category.id %}">{{ category.name }} ({{ category.num_posts }})</a></li>
         </ul>
+        {% endfor %}
+
     </div>
-    {% endfor %}
+    <div class="idk2">
+      <p>글 제목</p>
+      <p>작성 시각</p>
+    </div>
+    <hr class="line">
+    <hr>
     {%  for article in articles %}
     <div class="article">
+
+      
         <ul>
-        
+      <div class="idk">
         <li><a href = "{% url 'detail' article.id %}">{{ article.title }}</a></li>
-       
+        <li><a href = "{% url 'detail' article.id %}">{{ article.created_date }}</a></li>
+      </div>
+
+        
+        <hr class="underline">
+
     </ul>
   </div>
   {% endfor %}
-    <a href="{% url 'new' %}">글 쓰러 가기</a>
+    </div>
+
+    {% endblock %}
+
 </body>
 </html>
+
 

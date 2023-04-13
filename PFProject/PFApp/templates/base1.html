@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'base1.css' %}">
+    {% block css %}
+    {% endblock css %}
+</head>
+<body>
+    <div class="menu" >
+            <span class="menu1"><a href="{% url 'info' %}">INFO.</a></span>
+            <span class="menu2"><a href="{% url 'project' %}">PROJECT.</a></span>
+            <span class="menu3"><a href="{% url 'blog' %}">BLOG.</a></span>
+      </div>
+{% block contents %}
+{% endblock contents %}
+<h1>CONTACT</h1><hr>
+<p class="contact">
+    ph. 010 6298 5088<br>
+    email. younglegscrew@naver.com
+</p>
+
+</body>
+</html>
